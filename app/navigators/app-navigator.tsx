@@ -8,11 +8,7 @@ import React from "react"
 import { useColorScheme } from "react-native"
 import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import {
-  HomeScreen,
-  LoginScreen,
-  RegisterScreen,
-} from "../screens"
+import { HomeScreen, LoginScreen, RegisterScreen } from "../screens"
 import { navigationRef, useBackButtonHandler } from "./navigation-utilities"
 
 /**

@@ -22,15 +22,17 @@ const ROOT: ViewStyle = {
 
 // REMOVE ME! ⬇️ This TS ignore will not be necessary after you've added the correct navigator param type
 // @ts-ignore
-export const TopicScreen: FC<StackScreenProps<NavigatorParamList, "topic">> = observer(function TopicScreen() {
-  // Pull in one of our MST stores
-  // const { someStore, anotherStore } = useStores()
+export const TopicScreen: FC<StackScreenProps<NavigatorParamList, "topic">> = observer(
+  function TopicScreen() {
+    // Pull in one of our MST stores
+    // const { someStore, anotherStore } = useStores()
 
-  // Pull in navigation via hook
-  // const navigation = useNavigation()
-  return (
-    <Screen style={ROOT} preset="scroll">
-      <Text preset="header" text="topic" />
-    </Screen>
-  )
-})
+    // Pull in navigation via hook
+    // const navigation = useNavigation()
+    return (
+      <Screen style={ROOT} preset="scroll">
+        <Text preset="header" text="topic" />
+      </Screen>
+    )
+  },
+)
