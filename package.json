@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "debate_frontend",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -25,7 +25,8 @@
     "clean": "react-native-clean-project",
     "clean-all": "npx react-native clean-project-auto",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@expo/webpack-config": "^0.12.71",
@@ -112,7 +113,8 @@
     "solidarity": "3.0.4",
     "ts-jest": "26",
     "typescript": "4.7.3",
-    "webpack": "4"
+    "webpack": "4",
+    "husky": "^8.0.0"
   },
   "resolutions": {
     "@types/react": "^17",
