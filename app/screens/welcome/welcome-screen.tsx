@@ -34,7 +34,7 @@ const HEADER_TITLE: TextStyle = {
   ...TEXT,
   ...BOLD,
   fontSize: 12,
-          lineHeight: 15,
+  lineHeight: 15,
   textAlign: "center",
   letterSpacing: 1.5,
 }

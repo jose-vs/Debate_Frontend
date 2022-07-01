@@ -26,6 +26,7 @@
     "clean-all": "npx react-native clean-project-auto",
     "web": "expo start --web",
     "eject": "expo eject",
+    "checkTs": "tsc --noEmit",
     "prepare": "husky install",
     "husky-init": "npx husky install && chmod ug+x .husky/* && chmod ug+x .git/hooks/*",
     "husky": "husky add .husky/pre-commit \"npx --no-install lint-staged\""

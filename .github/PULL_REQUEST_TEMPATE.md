@@ -1,10 +1,12 @@
 ## Please verify the following:
 
 ### Acceptance Tests
+
 - [ ] 1
 - [ ] 2
 
 ### DoD
+
 - [ ] Passed user acceptance tests
 - [ ] New suitables tests written, if relevant
 - [ ] `yarn ci:test` tests passes
