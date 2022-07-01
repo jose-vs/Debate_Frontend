@@ -8,6 +8,7 @@ import React from "react"
 import { useColorScheme } from "react-native"
 import { NavigationContainer, DefaultTheme, DarkTheme } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { HomeScreen, LoginScreen, RegisterScreen } from "../screens"
 import { navigationRef, useBackButtonHandler } from "./navigation-utilities"
 
@@ -23,29 +24,48 @@ import { navigationRef, useBackButtonHandler } from "./navigation-utilities"
  *   https://reactnavigation.org/docs/params/
  *   https://reactnavigation.org/docs/typescript#type-checking-the-navigator
  */
-export type NavigatorParamList = {
+
+export type TabNavigatorParamList = {
+  homestack: undefined
+  login: undefined
+  register: undefined
+}
+
+const Tab = createBottomTabNavigator<TabNavigatorParamList>()
+
+const AppTab = () => {
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Tab.Screen name="homestack" component={HomeStackScreen} />
+    </Tab.Navigator>
+  )
+}
+
+export type AppHomeNavigatorParamList = {
   home: undefined
   login: undefined
   register: undefined
-  // 🔥 Your screens go here
 }
 
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
-const Stack = createNativeStackNavigator<NavigatorParamList>()
+const HomeStack = createNativeStackNavigator<AppHomeNavigatorParamList>()
 
-const AppStack = () => {
+const HomeStackScreen = () => {
   return (
-    <Stack.Navigator
+    <HomeStack.Navigator
       screenOptions={{
         headerShown: false,
       }}
       initialRouteName="home"
     >
-      <Stack.Screen name="home" component={HomeScreen} />
-      <Stack.Screen name="login" component={LoginScreen} />
-      <Stack.Screen name="register" component={RegisterScreen} />
-      {/** 🔥 Your screens go here */}
-    </Stack.Navigator>
+      <HomeStack.Screen name="home" component={HomeScreen} />
+      <HomeStack.Screen name="login" component={LoginScreen} />
+      <HomeStack.Screen name="register" component={RegisterScreen} />
+    </HomeStack.Navigator>
   )
 }
 
@@ -60,7 +80,7 @@ export const AppNavigator = (props: NavigationProps) => {
       theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
       {...props}
     >
-      <AppStack />
+      <AppTab />
     </NavigationContainer>
   )
 }
